@@ -1,1 +1,1 @@
-# WEB app deployment using Terraform
+# AWS Terraform Web Application
