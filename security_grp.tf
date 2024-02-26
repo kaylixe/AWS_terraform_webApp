@@ -72,9 +72,9 @@ resource "aws_security_group" "vprofile-backend-sg" {
   }
 
   ingress {
-    from_port   = 0
-    protocol    = "-1"
-    to_port     = 0
+    from_port       = 0
+    protocol        = "-1"
+    to_port         = 0
     security_groups = [aws_security_group.vprofile-prod-sg.id]
   }
 
