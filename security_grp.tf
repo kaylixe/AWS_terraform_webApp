@@ -37,7 +37,7 @@ resource "aws_security_group" "vprofile-bastion-sg" {
     cidr_blocks = [var.MYIP]
   }
 
-   ingress {
+  ingress {
     from_port   = 80
     protocol    = "tcp"
     to_port     = 80
