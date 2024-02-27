@@ -38,8 +38,12 @@ variable "dbuser" {
   default = "admin"
 }
 
-variable "dbpass" {
+variable "dbname" {
   default = "accounts"
+}
+
+variable "dbpass" {
+  default = "admin123"
 }
 
 variable "instance_count" {
@@ -49,6 +53,7 @@ variable "instance_count" {
 variable "VPC_NAME" {
   default = "vprofile-VPC"
 }
+
 
 variable "Zone1" {
   default = "us-east-2a"

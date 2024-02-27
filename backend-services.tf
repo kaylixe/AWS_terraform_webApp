@@ -17,13 +17,16 @@ resource "aws_elasticache_subnet_group" "vprofile-ecache-subgrp" {
 }
 
 resource "aws_db_instance" "vprofile-rds" {
+  db_name                = var.dbname
   allocated_storage      = 20
-  db_name                = "mydb"
+  storage_type           = "gp2"
   engine                 = "mysql"
   engine_version         = "5.7"
   instance_class         = "db.t2.micro"
   username               = var.dbuser
   password               = var.dbpass
+  multi_az               = false
+  publicly_accessible    = false
   parameter_group_name   = "default.mysql5.7"
   skip_final_snapshot    = true
   db_subnet_group_name   = aws_db_subnet_group.vprofile-rds-subgrp.name
@@ -54,4 +57,7 @@ resource "aws_mq_broker" "vprofile-rmq" {
     username = var.rmuser
     password = var.rmqpass
   }
+}
+output "rds_address" {
+  value = aws_db_instance.vprofile-rds.address
 }

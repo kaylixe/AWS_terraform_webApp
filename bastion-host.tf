@@ -19,7 +19,7 @@ resource "aws_instance" "vprofile-bastion" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/vprofile-dbdeploy.sh",
-      "sudo /tmp/vprofile-dbdeploy.sh"
+      "/tmp/vprofile-dbdeploy.sh"
     ]
   }
 
